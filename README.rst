@@ -1,7 +1,7 @@
 ClueCon Speaker Voting
 -----
 
-Built using `Plivo <http://www.plivo.org/>`_
+Built using `Plivo Framework <http://www.plivo.org/>`_
 
 
 License
