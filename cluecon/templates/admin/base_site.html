@@ -1,0 +1,33 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {% trans 'Plivo ClueCon Admin' %}{% endblock %}
+
+{% block extrastyle %}
+
+<style>
+#header {
+    background-color: #ffffff;
+    color: #1833cc;
+    border-bottom: solid 1px #c2c2c2;
+}
+#header a:link, #header a:visited {
+    color: #1833cc;
+    text-decoration:underline;
+}
+.LogoContainer {
+    padding:5px 0px 10px 20px ;
+}
+</style>
+
+{% endblock %}
+
+
+{% block branding %}
+
+<div class="LogoContainer">
+    <h3>Plivo ClueCon Admin </h3>
+</div>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

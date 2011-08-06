@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load uni_form_tags %}
+
+{% block title %} {{ block.super }}{% trans "Login" %}{% endblock %}
+
+{% block bodyclass %}base{% endblock %}
+
+{% block content %}
+
+ <div id="content" class="prepend-7 span-10 last">
+     <br/><br/>
+        {% url acct_signup as signup_url %}
+        <form class="uniForm" action='.' method='post' >
+            {% csrf_token %}
+            <fieldset class="inlineLabels">
+
+                {{ form|as_uni_form }}
+
+                <div class="buttonHolder">
+                    <input type="submit" value="{% trans "Log in &raquo;" %}" />
+                </div>
+            </fieldset>
+</div>
+
+{% endblock %}

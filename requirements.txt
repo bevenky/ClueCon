@@ -1,0 +1,8 @@
+Django
+MySQL-python==1.2.3
+
+python-dateutil==1.5
+yolk==0.4.1
+pytz
+
+django-uni-form==0.8
