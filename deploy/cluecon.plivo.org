@@ -1,0 +1,33 @@
+WSGIPythonHome /usr/src/django1.3_env/
+WSGIPythonPath /usr/src/ClueCon/
+
+<VirtualHost *:80>
+
+ServerAdmin hello@plivo.org
+ServerName cluecon.plivo.org
+ServerAlias cluecon.plivo.org
+
+#WSGIDaemonProcess cluecon processes=2 threads=15
+#WSGIProcessGroup cluecon
+
+# Log Files
+LogLevel warn
+ErrorLog /var/log/apache2/cluecon.plivo.org_error.log
+CustomLog /var/log/apache2/cluecon.plivo.org.log common
+
+#Aliases for static media from project
+Alias /static_media/ /usr/src/ClueCon/cluecon/static_media/
+
+#Aliases for admin media
+Alias /static/admin/ /usr/src/django1.3_env/lib/python2.6/site-packages/django/contrib/admin/media/
+
+#Alias for wsgi requests
+WSGIScriptAlias / /usr/src/ClueCon/deploy/apache.wsgi
+
+
+<Directory /usr/src/ClueCon/deploy/>
+Order allow,deny
+Allow from all
+</Directory>
+
+</VirtualHost>
