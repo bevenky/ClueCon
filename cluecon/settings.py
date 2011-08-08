@@ -191,6 +191,9 @@ EMAIL_HOST_USER= 'hello@plivo.org'
 EMAIL_HOST_PASSWORD= 'password'
 EMAIL_PORT=587
 
+# allow api call from following ips
+ALLOWED_IPS = ['127.0.0.1', '46.102.242.62']
+
 # Forwarding DID
 DID = '16465884366'
 

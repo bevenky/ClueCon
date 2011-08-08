@@ -84,10 +84,10 @@ def get_post_param(request, param):
     return ""
 
 
-def create_fail_restxml():
+def create_fail_restxml(msg):
     r = plivohelper.Response()
     g = r.addPreAnswer()
-    g.addSpeak("Sorry. Your vote cannot be considered")
+    g.addSpeak("Sorry. Your vote cannot be considered. %s" % msg)
     r.addHangup(reason='rejected')
     return r
 
@@ -104,27 +104,39 @@ def mask_phone(from_no):
 
 @csrf_exempt
 def handle_call_request(request):
-    if request.method == 'POST':
+    if request.method != 'POST':
+        msg = "Only POST Request Allowed"
+    else:
         # dont accept requests from any other system
-        if request.META['REMOTE_ADDR'] == '127.0.0.1':
+        if request.META['REMOTE_ADDR'] not in settings.ALLOWED_IPS:
+            msg = "IP not allowed"
+        else:
             to_no = get_post_param(request, 'To')
             from_no = get_post_param(request, 'From')
-            if from_no != "":
+            if from_no == "":
+                msg = "No Number Recieved"
+            else:
                 direction = get_post_param(request, 'Direction')
-                if to_no == settings.DID and direction == 'inbound':
+                if not (to_no == settings.DID and direction == 'inbound'):
+                    msg = "Invalid Direction"
+                else:
                     # get current speaker
                     try:
                         speaker = get_object_or_404(Speaker, currently_speaking=True)
                     except Http404:
                         speaker = None
-                    if speaker is not None:
+                    if speaker is None:
+                        msg = "No Current Speaker"
+                    else:
                         # check if this vote is already considered
                         try:
                             vote = get_object_or_404(Vote, speaker=speaker,
                                                             phone_no=from_no)
                         except Http404:
                             vote = None
-                        if vote is None:
+                        if vote is not None:
+                            msg = "Duplicate Vote"
+                        else:
                             speaker.total_votes = speaker.total_votes + 1
                             speaker.save()
                             vote_dict={
@@ -141,6 +153,4 @@ def handle_call_request(request):
                             # return success
                             response = create_success_restxml()
                             return HttpResponse(response, mimetype='text/xml')
-    # return fail for all other cases
-    response = create_fail_restxml()
-    return HttpResponse(response, mimetype='text/xml')
+    return HttpResponse(create_fail_restxml(msg), mimetype='text/xml')
