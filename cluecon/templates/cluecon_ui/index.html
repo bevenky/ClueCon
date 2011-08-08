@@ -21,23 +21,23 @@ $(document).ready(function(){
 {% block bodyclass %} base {% endblock %}
 
 {% block content %}
+    <div class="span-24 last">
+        <div id="LDetails" class="span-8">
+                <h4><b>Previous Speaker:</b> {{ previous_speaker.name }}</h4>
+                <h4><b>Presentation Topic:</b> {{ previous_speaker.talk_name }}</h4>
+                <h4><b>Votes:</b> {{ previous_speaker.total_votes }}</h4>
+        </div>
 
-    <div id="ODetails" class="prepend-1 span-12">
-            <h3><u><b>Previous Speaker:</b></u> {{ previous_speaker.name }}</h3>
-            <h3><u><b>Presentation Topic:</b></u> {{ previous_speaker.talk_name }}</h3>
-            <h3><u><b>Votes:</b></u> {{ previous_speaker.total_votes }}</h3>
-    </div>
+        <div id="Details" class="span-8">
+                <h3><b>Current Speaker:</b> {{ current_speaker.name }}</h3>
+                <h3><b>Presentation Topic:</b> {{ current_speaker.talk_name }}</h3>
+                <h3><b>Votes:</b> <span style="color: green" id="votes">{{ current_speaker.total_votes }}</span></h3>
+        </div>
 
-    <div id="Details" class="clear span-24 last">
-        <br/>
-            <h3><u><b>Current Speaker:</b></u> {{ current_speaker.name }}</h3>
-            <h3><u><b>Presentation Topic:</b></u> {{ current_speaker.talk_name }}</h3>
-            <h3><u><b>Votes:</b></u> <span style="color: green" id="votes">{{ current_speaker.total_votes }}</span></h3>
-    </div>
-
-    <div id="ODetails" class="span-12 last">
-        <h3><u><b>Next Speaker: </b></u>{{ next_speaker.name }}</h3>
-        <h3><u><b>Presentation Topic:</b></u> {{ next_speaker.talk_name }}</h3>
+        <div id="RDetails" class="span-8">
+            <h4><b>Next Speaker: </b>{{ next_speaker.name }}</h4>
+            <h4><b>Presentation Topic:</b> {{ next_speaker.talk_name }}</h4>
+        </div>
     </div>
 
 {% endblock %}

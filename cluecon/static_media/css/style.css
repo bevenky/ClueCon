@@ -90,29 +90,51 @@ body.base {
 }
 #Details {
     background-color: #dde5ff;
-    margin-top: 17px;
-    margin-bottom: 17px;
-    margin-left: 140px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    margin-left: 20px;
     padding: 10px 1px 0px 5px;
     float: left;
     height: auto;
-    width: 620px;
+    width: 380px;
     border: solid 1px;
     border-color: #bbccff;
     font-size: 11px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px
 }
-#ODetails {
+#LDetails {
     background-color: #f2f2f2;
     margin-top: 35px;
     margin-bottom: 35px;
-    margin-left: 140px;
+    margin-left: 10px;
     padding: 10px 1px 0px 5px;
     float: left;
     height: auto;
-    width: 620px;
+    width: 230px;
     border: solid 1px;
     border-color: #aaaaaa;
     font-size: 11px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px
+}
+#RDetails {
+    background-color: #f2f2f2;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    margin-left: 10px;
+    padding: 10px 1px 0px 5px;
+    float: left;
+    height: auto;
+    width: 230px;
+    border: solid 1px;
+    border-color: #aaaaaa;
+    font-size: 11px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px
 }
 #Copyright {
    font-size: 12px;
