@@ -2,20 +2,141 @@
 
 {% block title %} {{ block.super }} Home  {% endblock %}
 
+
 {% block extrahead %}
 
+<link rel="stylesheet" href="/static_media/css/jquery.checkbox.css" />
+<script type="text/javascript" src="/static_media/js/jquery.checkbox.min.js"></script>
+
+<script type="text/javascript">
+    $('html').ajaxSend(function(event, xhr, settings) {
+      function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie != '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+            // Only send the token to relative URLs i.e. locally.
+            xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+        }
+    });
+
+    $(document).ready(function() {
+        $('input:radio').checkbox();
+        $('input:radio').bind('check', function() {
+            var id = $(this).attr("id");
+            var dataString = 'speaker_id='+ id ;
+            $.ajax({
+                type: 'POST',
+                url: '/speaker/currentlyspeaking/',
+                data: dataString,
+                cache: false,
+                beforeSend: function() {
+                },
+                success: function(response) {}
+            });
+        });
+    });
+</script>
+
 {% endblock %}
+
 
 {% block bodyclass %} base {% endblock %}
 
 {% block content %}
-  <div id="content1" class="clear span-24 last">
-    <br/>
-        <div id="body-left-side" class="prepend-5 clear span-15">
-          <h1 ><strong>Plivo ClueCon</strong></h1>
-            <h2 >Logged in ..</h2>
-        </div>
-        <div id="body-right-side" class="prepend-0 span-1 last">
-        </div>
+    <div id="content1" class="clear span-24 last">
+        <br/>
+            <h3>Day 1</h3>
+            <table class="styled-table">
+                <tr>
+                    <th >Time</th>
+                    <th>Speaker</th>
+                    <th>Presentation Topic</th>
+                    <th >Currently Speaking</th>
+                    <th>Votes</th>
+                </tr>
+
+                {% for speaker in first_day %}
+                    <tr style="border-bottom:1px solid #eee; font-size:1em;">
+                        <td>{{ speaker.talk_schedule }}</td>
+                        <td>{{ speaker.name }}</td>
+                        <td>{{ speaker.talk_name }}</td>
+                        {% if speaker.currently_speaking %}
+                            <td id="primary"><input name="primary" value="1" type="radio" id="{{ speaker.id }}" checked></td>
+                        {% else %}
+                            <td id="primary"><input name="primary" value="1" type="radio" id="{{ speaker.id }}"></td>
+                        {% endif %}
+                        <td><strong>{{ speaker.total_votes }}</strong></td>
+                    </tr>
+                {% endfor %}
+            </table>
     </div>
+
+     <div id="content1" class="clear span-24 last">
+        <br/>
+            <h3>Day 2</h3>
+            <table class="styled-table">
+                <tr>
+                    <th >Time</th>
+                    <th>Speaker</th>
+                    <th>Presentation Topic</th>
+                    <th >Currently Speaking</th>
+                    <th>Votes</th>
+                </tr>
+
+                {% for speaker in second_day %}
+                    <tr style="border-bottom:1px solid #eee; font-size:1em;">
+                        <td>{{ speaker.talk_schedule }}</td>
+                        <td>{{ speaker.name }}</td>
+                        <td>{{ speaker.talk_name }}</td>
+                        {% if speaker.currently_speaking %}
+                            <td id="primary"><input name="primary" value="1" type="radio" id="{{ speaker.id }}" checked></td>
+                        {% else %}
+                            <td id="primary"><input name="primary" value="1" type="radio" id="{{ speaker.id }}"></td>
+                        {% endif %}
+                        <td><strong>{{ speaker.total_votes }}</strong></td>
+                    </tr>
+                {% endfor %}
+            </table>
+    </div>
+
+    <div id="content1" class="clear span-24 last">
+        <br/>
+            <h3>Day 3</h3>
+            <table class="styled-table">
+                <tr>
+                    <th >Time</th>
+                    <th>Speaker</th>
+                    <th>Presentation Topic</th>
+                    <th >Currently Speaking</th>
+                    <th>Votes</th>
+                </tr>
+
+                {% for speaker in third_day %}
+                    <tr style="border-bottom:1px solid #eee; font-size:1em;">
+                        <td>{{ speaker.talk_schedule }}</td>
+                        <td>{{ speaker.name }}</td>
+                        <td>{{ speaker.talk_name }}</td>
+                        {% if speaker.currently_speaking %}
+                            <td id="primary"><input name="primary" value="1" type="radio" id="{{ speaker.id }}" checked></td>
+                        {% else %}
+                            <td id="primary"><input name="primary" value="1" type="radio" id="{{ speaker.id }}"></td>
+                        {% endif %}
+                        <td><strong>{{ speaker.total_votes }}</strong></td>
+                    </tr>
+                {% endfor %}
+            </table>
+    </div>
+    <br/>
 {% endblock %}

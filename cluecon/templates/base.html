@@ -44,18 +44,19 @@
     <br/>
     <hr />
 
-    <div id="Copyright" class="span-5">
+    <div id="Copyright" class="span-9">
         &copy; 2011 Team Plivo
     </div>
 
-        <div id="footerRightLinks" class="span-19 last">
-            <span class="separatorLast">
+        <div id="footerRightLinks" class="span-15 last">
+            <span class="separator Last">
                 {% if user.is_authenticated %}
                     <a href="/user/logout/">Logout</a>
                 {% else %}
                     <a href="/user/login/">Login</a>
                 {% endif %}
             </span>
+            &nbsp;&nbsp;&nbsp;Source code at - <a href="https://github.com/bevenky/ClueCon">Github</a>
         </div>
 </div>
 
