@@ -6,3 +6,5 @@ yolk==0.4.1
 pytz
 
 django-uni-form==0.8
+
+python-twitter
