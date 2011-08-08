@@ -1,11 +1,13 @@
 from django.conf.urls.defaults import *
 from django.contrib.auth import views as auth_views
 
-from views import auth_user_dashboard, home, set_currentspeaker, handle_call_request
+from views import auth_user_dashboard, home, set_currentspeaker, handle_call_request, all_details, get_votes
 
 urlpatterns = patterns('',
 
     url(r'^$', home),
+    url(r'^all/$', all_details),
+    url(r'^getvotes/$', get_votes),
     url(r'^user/login/$', auth_views.login,
                            {'template_name': 'cluecon_ui/login.html'},
                            name='auth_login'),

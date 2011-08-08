@@ -2,7 +2,7 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.http import Http404
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest
 from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.cache import never_cache
@@ -28,7 +28,34 @@ def post_tweet(text):
     except Exception:
         return False
 
+
 def home(request, template="cluecon_ui/index.html"):
+    if request.user.is_authenticated():
+        return HttpResponseRedirect(reverse('auth_user_dashboard'))
+    try:
+        current_speaker = Speaker.objects.get(currently_speaking=True)
+    except Exception:
+        current_speaker = None
+    if current_speaker is not None:
+        try:
+            previous_speaker = Speaker.objects.get(id=current_speaker.id-1)
+        except Exception:
+            previous_speaker = None
+        try:
+            next_speaker = Speaker.objects.get(id=current_speaker.id+1)
+        except Exception:
+            next_speaker = None
+    else:
+        previous_speaker = None
+        next_speaker = None
+    return direct_to_template(request, template,
+                                extra_context={ "current_speaker": current_speaker,
+                                                "previous_speaker": previous_speaker,
+                                                "next_speaker": next_speaker,
+                                                 })
+
+
+def all_details(request, template="cluecon_ui/all.html"):
     if request.user.is_authenticated():
         return HttpResponseRedirect(reverse('auth_user_dashboard'))
     first_day = Speaker.objects.filter(talk_day=1)
@@ -39,6 +66,7 @@ def home(request, template="cluecon_ui/index.html"):
                                                 "second_day": second_day,
                                                 "third_day": third_day
                                                  })
+
 
 @login_required
 @never_cache
@@ -51,6 +79,18 @@ def auth_user_dashboard(request, template="cluecon_ui/auth_user_dashboard.html")
                                                 "second_day": second_day,
                                                 "third_day": third_day
                                                  })
+
+def get_votes(request):
+    if request.method == 'GET':
+        try:
+            current_speaker = Speaker.objects.get(currently_speaking=True)
+        except Exception:
+            current_speaker = None
+        if current_speaker is None:
+            return HttpResponse(str(""))
+        else:
+            return HttpResponse(str(current_speaker.total_votes))
+    return HttpResponseBadRequest()
 
 
 def set_currentspeaker(request):

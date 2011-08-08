@@ -88,6 +88,32 @@ body.base {
     margin-top:30px;
     font-size:12px;
 }
+#Details {
+    background-color: #dde5ff;
+    margin-top: 17px;
+    margin-bottom: 17px;
+    margin-left: 140px;
+    padding: 10px 1px 0px 5px;
+    float: left;
+    height: auto;
+    width: 620px;
+    border: solid 1px;
+    border-color: #bbccff;
+    font-size: 11px;
+}
+#ODetails {
+    background-color: #f2f2f2;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    margin-left: 140px;
+    padding: 10px 1px 0px 5px;
+    float: left;
+    height: auto;
+    width: 620px;
+    border: solid 1px;
+    border-color: #aaaaaa;
+    font-size: 11px;
+}
 #Copyright {
    font-size: 12px;
    color: #555555;

@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %} {{ block.super }} Home  {% endblock %}
+
+{% block extrahead %}
+
+{% endblock %}
+
+{% block bodyclass %} base {% endblock %}
+
+{% block content %}
+    <div id="content1" class="clear span-24 last">
+        <br/>
+            <h3>Day 1</h3>
+            <table class="styled-table">
+                <tr>
+                    <th >Time</th>
+                    <th>Speaker</th>
+                    <th>Presentation Topic</th>
+                    <th >Currently Speaking</th>
+                    <th>Votes</th>
+                </tr>
+
+                {% for speaker in first_day %}
+                    <tr style="border-bottom:1px solid #eee; font-size:1em;">
+                        <td>{{ speaker.talk_schedule }}</td>
+                        <td>{{ speaker.name }}</td>
+                        <td>{{ speaker.talk_name }}</td>
+                        {% if speaker.currently_speaking %}
+                            <td>Yes</td>
+                        {% else %}
+                            <td>No</td>
+                        {% endif %}
+                        <td><strong>{{ speaker.total_votes }}</strong></td>
+                    </tr>
+                {% endfor %}
+            </table>
+    </div>
+
+     <div id="content1" class="clear span-24 last">
+        <br/>
+            <h3>Day 2</h3>
+            <table class="styled-table">
+                <tr>
+                    <th >Time</th>
+                    <th>Speaker</th>
+                    <th>Presentation Topic</th>
+                    <th >Currently Speaking</th>
+                    <th>Votes</th>
+                </tr>
+
+                {% for speaker in second_day %}
+                        <tr style="border-bottom:1px solid #eee; font-size:1em;">
+                        <td>{{ speaker.talk_schedule }}</td>
+                        <td>{{ speaker.name }}</td>
+                        <td>{{ speaker.talk_name }}</td>
+                        {% if speaker.currently_speaking %}
+                            <td>Yes</td>
+                        {% else %}
+                            <td>No</td>
+                        {% endif %}
+                        <td><strong>{{ speaker.total_votes }}</strong></td>
+                    </tr>
+                {% endfor %}
+            </table>
+    </div>
+
+    <div id="content1" class="clear span-24 last">
+        <br/>
+            <h3>Day 3</h3>
+            <table class="styled-table">
+                <tr>
+                    <th >Time</th>
+                    <th>Speaker</th>
+                    <th>Presentation Topic</th>
+                    <th >Currently Speaking</th>
+                    <th>Votes</th>
+                </tr>
+
+                {% for speaker in third_day %}
+                    <tr style="border-bottom:1px solid #eee; font-size:1em;">
+                        <td>{{ speaker.talk_schedule }}</td>
+                        <td>{{ speaker.name }}</td>
+                        <td>{{ speaker.talk_name }}</td>
+                        {% if speaker.currently_speaking %}
+                            <td>Yes</td>
+                        {% else %}
+                            <td>No</td>
+                        {% endif %}
+                        <td><strong>{{ speaker.total_votes }}</strong></td>
+                    </tr>
+                {% endfor %}
+            </table>
+    </div>
+    <br/>
+{% endblock %}
