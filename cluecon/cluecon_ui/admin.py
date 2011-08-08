@@ -11,7 +11,7 @@ from models import *
 
 class SpeakerAdmin(admin.ModelAdmin):
     list_display = ('name', 'currently_speaking', 'talk_name', 'talk_schedule',
-                                                            'total_votes')
+                                                    'talk_day','total_votes')
     list_filter = ['currently_speaking']
     search_fields = ['name']
     list_per_page = 50
