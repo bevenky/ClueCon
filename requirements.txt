@@ -8,3 +8,4 @@ pytz
 django-uni-form==0.8
 
 python-twitter
+simplejson
