@@ -38,20 +38,26 @@ def home(request, template="cluecon_ui/index.html"):
         current_speaker = None
     if current_speaker is not None:
         try:
-            previous_speaker = Speaker.objects.get(id=current_speaker.id-1)
+            previous_speaker = Speaker.objects.get(id=current_speaker.id-1, talk_day=current_speaker.talk_day)
         except Exception:
             previous_speaker = None
         try:
-            next_speaker = Speaker.objects.get(id=current_speaker.id+1)
+            next_speaker = Speaker.objects.get(id=current_speaker.id+1, talk_day=current_speaker.talk_day)
         except Exception:
             next_speaker = None
     else:
         previous_speaker = None
         next_speaker = None
+
+    if next_speaker is not None:
+        upcoming_talks = Speaker.objects.filter(talk_day=current_speaker.talk_day).exclude(id__lte=next_speaker.id)
+    else:
+        upcoming_talks = None
     return direct_to_template(request, template,
                                 extra_context={ "current_speaker": current_speaker,
                                                 "previous_speaker": previous_speaker,
                                                 "next_speaker": next_speaker,
+                                                "upcoming_talks": upcoming_talks
                                                  })
 
 
