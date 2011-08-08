@@ -1,0 +1,312 @@
+[
+    {
+        "pk": 1,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Anthony Minessale",
+            "talk_name": "Keynote Address",
+            "talk_schedule": "2011-08-09 9:30",
+            "talk_day": "1"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Jean-Marc Valin",
+            "talk_name": "OPUS Codec",
+            "talk_schedule": "2011-08-09 10:30",
+            "talk_day": "1"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Travis Cross",
+            "talk_name": "A Tale of Interoperability: When Does SIP Break?",
+            "talk_schedule": "2011-08-09 11:00",
+            "talk_day": "1"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "John Riordan",
+            "talk_name": "Horizontal Scaling and Geographic of OnSIP",
+            "talk_schedule": "2011-08-09 11:30",
+            "talk_day": "1"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Mathieu René & Mathieu O'Connor",
+            "talk_name": "Voice On A Cloud",
+            "talk_schedule": "2011-08-09 13:30",
+            "talk_day": "1"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Kristian Kielhofner and Chad Phillips",
+            "talk_name": "Jester: Asterisk Voicemail and So Much More",
+            "talk_schedule": "2011-08-09 14:30",
+            "talk_day": "1"
+        }
+    },
+     {
+        "pk": 7,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Nenad Corbic",
+            "talk_name": "FreeSWITCH in Production - Real-World Use Cases",
+            "talk_schedule": "2011-08-09 15:00",
+            "talk_day": "1"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Arnie Goodstein",
+            "talk_name": "'VinciSoft' - The Official Commercial Carrier Implementation of FreeSWITCH",
+            "talk_schedule": "2011-08-09 15:45",
+            "talk_day": "1"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Bogdan-Andrei Iancu",
+            "talk_name": "Hosted PBX - Customer or Provider Site?",
+            "talk_schedule": "2011-08-09 16:15",
+            "talk_day": "1"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "James Aimonetti",
+            "talk_name": "Roll Your Own VoIP Cloud… In About 30 Minutes",
+            "talk_schedule": "2011-08-09 16:45",
+            "talk_day": "1"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Moises Silva",
+            "talk_name": "Media Handling In FreeSWITCH",
+            "talk_schedule": "2011-08-10 9:00",
+            "talk_day": "2"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Venky",
+            "talk_name": "Plivo - Developing Telephony Apps in the Web World",
+            "talk_schedule": "2011-08-10 9:30",
+            "talk_day": "2"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Giovanni Maruzzelli",
+            "talk_name": "Connecting FreeSWITCH to the Skype Network with mod_skypopen: Scalability Issues",
+            "talk_schedule": "2011-08-10 10:00",
+            "talk_day": "2"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Karl Anderson",
+            "talk_name": "Blue Box Version 2.0: Distributed FreeSWITCH Systems",
+            "talk_schedule": "2011-08-10 10:30",
+            "talk_day": "2"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Stefan Wintermeyer",
+            "talk_name": "Gemeinschaft 4",
+            "talk_schedule": "2011-08-10 11:00",
+            "talk_day": "2"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "William Dale",
+            "talk_name": "Building A Labor Time Tracker Solution With OSS",
+            "talk_schedule": "2011-08-10 11:30",
+            "talk_day": "2"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Tim Sheehan",
+            "talk_name": "Special Polycom Presentation",
+            "talk_schedule": "2011-08-10 13:30",
+            "talk_day": "2"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "TJ Vanderpoel",
+            "talk_name": "Open Source Call Center Success with FreeSWITCH",
+            "talk_schedule": "2011-08-10 14:00",
+            "talk_day": "2"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Daniel-Constantin Mierla",
+            "talk_name": "Building Strong Security for Large VoIP Networks",
+            "talk_schedule": "2011-08-10 14:30",
+            "talk_day": "2"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Daniel Bryars",
+            "talk_name": "Building a hosted call center w/ FS on Windows",
+            "talk_schedule": "2011-08-10 15:00",
+            "talk_day": "2"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Flavio Goncalves",
+            "talk_name": "The Number One Issue in VoIP Today: Fraud!",
+            "talk_schedule": "2011-08-10 15:45",
+            "talk_day": "2"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Adrian Georgescu",
+            "talk_name": "Blink: A State of the Art, Easy to Use SIP Client",
+            "talk_schedule": "2011-08-10 16:15",
+            "talk_day": "2"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Dr. Moshe Yudkowsky",
+            "talk_name": "Hyper-personalization",
+            "talk_schedule": "2011-08-11 9:00",
+            "talk_day": "3"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "TR Missner",
+            "talk_name": "TBA",
+            "talk_schedule": "2011-08-11 9:30",
+            "talk_day": "3"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Alex Kurganov",
+            "talk_name": "Speech and Telephony Open Standards in FreeSWITCH",
+            "talk_schedule": "2011-08-11 10:00",
+            "talk_day": "3"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Zac Wolfe",
+            "talk_name": "Safi And The Art Of The IVR",
+            "talk_schedule": "2011-08-11 10:30",
+            "talk_day": "3"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Garmt Boekholt",
+            "talk_name": "Using Text-To-Speech With Open Source Telephony Software",
+            "talk_schedule": "2011-08-11 11:00",
+            "talk_day": "3"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Ken Rice",
+            "talk_name": "Leveraging Open Source in Political Campaigns",
+            "talk_schedule": "2011-08-11 11:30",
+            "talk_day": "3"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Robert Daniel",
+            "talk_name": "Fun with FreeSWITCH and OpenSim",
+            "talk_schedule": "2011-08-11 13:00",
+            "talk_day": "3"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Alexandr S Dubovikov",
+            "talk_name": "Homer: A Simple and Powerful SIP Capturing Solution",
+            "talk_schedule": "2011-08-11 13:30",
+            "talk_day": "3"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "cluecon_ui.speaker",
+        "fields": {
+            "name": "Bill Sandiford",
+            "talk_name": "IPv4 Apocalypse",
+            "talk_schedule": "2011-08-11 14:00",
+            "talk_day": "3"
+        }
+    }
+]
