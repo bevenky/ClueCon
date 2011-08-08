@@ -40,7 +40,7 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -183,14 +183,6 @@ SITE_NAME = 'cluecon.plivo.org'
 LOGIN_URL = '/'
 LOGIN_REDIRECT_URL = '/user/dashboard/'
 
-# if Django is running behind a proxy, we need to do things like use
-# HTTP_X_FORWARDED_FOR instead of REMOTE_ADDR. This setting is used
-# to inform apps of this fact
-BEHIND_PROXY = False
-
-# DEBUG_TOOLBAR_CONFIG = {
-#    "INTERCEPT_REDIRECTS": False,
-#}
 
 # Email setting
 EMAIL_USE_TLS = True
