@@ -191,6 +191,14 @@ EMAIL_HOST_USER= 'hello@plivo.org'
 EMAIL_HOST_PASSWORD= 'password'
 EMAIL_PORT=587
 
+# Forwarding DID
+DID = '16465884366'
 
 # Votes More than this number will not be registered
 MAX_VOTES = 200
+
+# Twitter stuff
+CONSUMER_KEY = 'EYMTR3xfZvd2oqkU4s4nfg'
+CONSUMER_SECRET = ''
+ACCESS_TOKEN_KEY = '351012113-Q2p15cpfumxQ24e3NhwSk4MqFoEr689j2VAl6dtA'
+ACCESS_TOKEN_SECRET = 'ZV8txq4kMfBTqSuitFbFSYE4BCZ3G4Q4heb9FXsSSGg'
