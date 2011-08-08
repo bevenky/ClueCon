@@ -25,35 +25,63 @@ $(document).ready(function(){
 
 <div class="container">
     <br/><br/><br/>
-    <div class="clear prepend-6 span-14">
-        <br/>
-        <h3>&nbsp;&nbsp;&nbsp;To vote for the current speaker, call <b>+1 646.588.4366</b></h3>
-    </div>
-   <div id="wrap">
-        <div id="ODetails" class="prev">
-                <h4><b>Previous Speaker:</b> {{ previous_speaker.name }}</h4>
-                <h4><b>Topic:</b> {{ previous_speaker.talk_name }}</h4>
-                <h4><b>Votes:</b> {{ previous_speaker.total_votes }}</h4>
 
+    <div class="vote_call">
+        <h2>Call Now to Cast Your Vote! (646) 588-4366</h2>
+    </div>
+    <br/>
+    <div id="wrap">
+        <div class="prev">
+            <span class="votes">{{ previous_speaker.total_votes }}</span>
+                <span class="speaker"><b>{{ previous_speaker.name }}</b></span>
+                <p><b>Topic:</b><br />
+                {{ previous_speaker.talk_name }}
+                </p>
+                <p><small><b>Day {{ previous_speaker.talk_day }}</b> ({{ previous_speaker.talk_schedule }})</small></p>
         </div>
 
         <div id="Details" class="current">
-        <div class="votes">
-            <b><span id="votes" "class="vote_count">{{ current_speaker.total_votes }}</span></b>
-            <span class="sm_txt">VOTES</span>
-        </div>
-            <br/>
-                <h3><b>Current Speaker:</b> {{ current_speaker.name }}</h3>
-                <h3><small><b>Topic:</b></small><br />
-            {{ current_speaker.talk_name }}</h3>
-        </div>
+            <div class="votes">
+                <b><span id="votes" class="vote_count">{{ current_speaker.total_votes }}</span></b>
+                <span class="sm_txt">VOTES</span>
+            </div>
 
-        <div id="ODetails" class="next">
-            <h4><b>Next Speaker: </b>{{ next_speaker.name }}</h4>
-            <h4><b>Presentation Topic:</b> {{ next_speaker.talk_name }}</h4>
-
+            <h2>{{ current_speaker.name }}</h2>
+            <p><b>Topic:</b><br />
+            {{ current_speaker.talk_name }}
+            </p>
+            <p><small><b>Day {{ current_speaker.talk_day }}</b> ({{ current_speaker.talk_schedule }})</small></p>
         </div>
 
+        <div class="next">
+            <span class="speaker">{{ next_speaker.name }}</span><br />
+            <p><b>Topic:</b><br />
+            {{ next_speaker.talk_name }}</p>
+            <p><small><b>Day {{ next_speaker.talk_day }}</b> ({{ next_speaker.talk_schedule }})</small></p>
+        </div>
+
+        <div class="prepend-2 span-20 last">
+
+        <div class="more_talks">
+            <br/><br/><h3>Upcoming Talks for the Day</h3>
+
+            <table class="styled-table">
+                    <tr>
+                        <th >Time</th>
+                        <th>Speaker</th>
+                        <th>Presentation Topic</th>
+                    </tr>
+
+                    {% for speaker in upcoming_talks %}
+                        <tr style="border-bottom:1px solid #eee; font-size:1em;">
+                            <td>{{ speaker.talk_schedule }}</td>
+                            <td>{{ speaker.name }}</td>
+                            <td>{{ speaker.talk_name }}</td>
+                        </tr>
+                    {% endfor %}
+                    </table>
+        </div>
+        </div>
     </div>
 </div>
 
