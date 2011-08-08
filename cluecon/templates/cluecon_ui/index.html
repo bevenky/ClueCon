@@ -21,23 +21,36 @@ $(document).ready(function(){
 {% block bodyclass %} base {% endblock %}
 
 {% block content %}
-    <div class="span-24 last">
-        <div id="LDetails" class="span-8">
+
+
+<div class="container">
+    <br/><br/>
+   <div id="wrap">
+        <div id="ODetails" class="prev">
                 <h4><b>Previous Speaker:</b> {{ previous_speaker.name }}</h4>
                 <h4><b>Topic:</b> {{ previous_speaker.talk_name }}</h4>
                 <h4><b>Votes:</b> {{ previous_speaker.total_votes }}</h4>
+
         </div>
 
-        <div id="Details" class="span-8">
+        <div id="Details" class="current">
+        <div class="votes">
+            <span id="votes" "class="vote_count"><b>{{ current_speaker.total_votes }}</b></span>
+            <span class="sm_txt">VOTES</span>
+        </div>
+            <br/>
                 <h3><b>Current Speaker:</b> {{ current_speaker.name }}</h3>
-                <h3><b>Topic:</b> {{ current_speaker.talk_name }}</h3>
-                <h3><b>Votes:</b> <span style="color: green" id="votes">{{ current_speaker.total_votes }}</span></h3>
+                <h3><small><b>Topic:</b></small><br />
+            {{ current_speaker.talk_name }}</h3>
         </div>
 
-        <div id="RDetails" class="span-8">
+        <div id="ODetails" class="next">
             <h4><b>Next Speaker: </b>{{ next_speaker.name }}</h4>
-            <h4><b>Topic:</b> {{ next_speaker.talk_name }}</h4>
+            <h4><b>Presentation Topic:</b> {{ next_speaker.talk_name }}</h4>
+
         </div>
+
     </div>
+</div>
 
 {% endblock %}
